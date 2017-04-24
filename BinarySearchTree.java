@@ -5,7 +5,7 @@ import java.util.*;
 
 public class BinarySearchTree<E extends Comparable<E>> extends AbstractTree<E> {
 
-    protected TreeNode<E> root;
+    protected TreeNode<E> root; 
     protected int size = 0;
 
     /**
@@ -41,22 +41,27 @@ public class BinarySearchTree<E extends Comparable<E>> extends AbstractTree<E> {
         return false;
     }//search
     public boolean search(E e, int[] count) {
-    TreeNode<E> current = root; // Start from the root
-    int i = 0;
-    while (current != null) {
-    i++;
-    count[0] = i;
-    if (e.compareTo(current.element) < 0) {
-    current = current.left;
-    } else if (e.compareTo(current.element) > 0) {
-    current = current.right;
-    } else // element matches current.element
-    {
-    return true; // Element is found
-    }
-    }
-    return false;
-    }
+        TreeNode<E> current = root; // Start from the root
+        int i = 0;
+        while (current != null) {
+            i++;
+            count[0] = i;
+            if (e.compareTo(current.element) < 0) {
+                current = current.left;
+            } else if (e.compareTo(current.element) > 0) {
+            current = current.right;
+            } else // element matches current.element
+            {
+             return true; // Element is found
+             }
+         }
+         return false;
+    } 
+    /*
+    Starting from the root, while current is not null, set your count array to the iterations of the loop. Compare the element youre 
+    searching for with the generic element and if it is less than zero, it gets moved to the left of current.
+    If it is more than zero move it to the right. 
+    */
 
     /**
      * Insert element o into the binary tree Return true if the element is
