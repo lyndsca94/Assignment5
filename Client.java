@@ -19,9 +19,9 @@ public class Client {
         long compsFound = 0;
         long compsNotFound = 0;
         int count[] = new int [1];
-        BinarySearchTree [] dictionary = new BinarySearchTree[26];
+        BinarySearchTree [] dictionary = new BinarySearchTree[26]; //converting from linked list to binary tree
         for (int i = 0; i < dictionary.length; i++) {
-            dictionary[i]= new BinarySearchTree<String>();
+            dictionary[i]= new BinarySearchTree<String>(); //conversion from linked list to tree
         }
         
         try {
@@ -56,7 +56,7 @@ public class Client {
                // int index = (s.charAt(0)-'a');
                 //dictionary[s.charAt(0)-'a'].add(s);
                 count[0]=0;
-                if (dictionary[(s.charAt(0)-97)].search(s,count)){
+                if (dictionary[(s.charAt(0)-97)].search(s,count)){ //changing from contains
                     wordsFound++;
                     compsFound += count[0];
                 } //if
